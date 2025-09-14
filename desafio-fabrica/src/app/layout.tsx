@@ -3,6 +3,7 @@ import "./globals.css";
 import { Audiowide } from "next/font/google";
 import Navbar from "./components/header";
 import Footer from "./components/footer";
+import React from "react";
 
 
 const audio_wide = Audiowide({ weight: "400", subsets: ["latin"] });

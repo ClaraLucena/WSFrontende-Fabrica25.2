@@ -16,7 +16,7 @@ export default function Component() {
 
   useEffect(() => {
     async function fetchPokemon() {
-      const response = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=20");
+      const response = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=30");
       const pokemons = response.data.results;
 
       const data: Pokemon[] = pokemons.map((pokemon: { name: string; url: string }) => {
@@ -67,7 +67,7 @@ export default function Component() {
             {filteredPokemon.map((poke) => (
               <tr key={poke.id} className="border-b border-amber-200">
                 <td className="p-2">
-                  <Image src={poke.image} alt={poke.name} width={48} height={48} className="mx-auto" />
+                  <Image src={poke.image} alt={poke.name} width={95} height={95} className="mx-auto" />
                 </td>
                 <td className="capitalize p-2">{poke.name}</td>
                 <td className="p-2">{poke.id}</td>

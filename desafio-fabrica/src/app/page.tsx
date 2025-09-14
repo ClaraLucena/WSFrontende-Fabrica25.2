@@ -15,7 +15,7 @@ export default function Component() {
   const [appliedSearch, setAppliedSearch] = useState(""); // Novo estado para o termo de busca aplicado
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchPokemon() {
       const response = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=20");
       const pokemons = response.data.results;
 
@@ -28,7 +28,7 @@ export default function Component() {
       setPokemonData(data);
     }
 
-    fetchData();
+    fetchPokemon();
   }, []);
 
   // Função para lidar com o clique no botão
